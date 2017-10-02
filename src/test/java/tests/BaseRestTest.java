@@ -2,15 +2,10 @@ package tests;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsCollectionContaining.hasItem;
 
@@ -52,7 +47,7 @@ public class BaseRestTest {
            .when()
                .post("/post")
            .then()
-//               .statusCode(201)
+               .statusCode(201)
                .log().all()
            .and()
                .extract()
